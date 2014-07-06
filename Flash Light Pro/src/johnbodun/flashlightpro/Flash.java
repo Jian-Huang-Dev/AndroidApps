@@ -1,8 +1,6 @@
 package johnbodun.flashlightpro;
 
-import java.io.IOException;
-
-import android.app.Activity;
+import jianhuang.flashlightpro.navdrawer.DrawerActivity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -27,7 +25,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class Flash extends Activity implements Callback {
+public class Flash extends DrawerActivity implements Callback {
 
 	private static Camera camera;
 	private ToggleButton flash_button;
@@ -83,8 +81,9 @@ public class Flash extends Activity implements Callback {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.flash);
-
+//		setContentView(R.layout.flash);
+		super.setInflaterOnView("home");
+		
 		flash_button = (ToggleButton) findViewById(R.id.flash_button);
 		text = (TextView) findViewById(R.id.text);
 		percent = (TextView) findViewById(R.id.percent);
@@ -264,13 +263,14 @@ public class Flash extends Activity implements Callback {
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
-		mHolder = holder;
-		try {
-			Log.i("SurfaceHolder", "setting preview");
-			camera.setPreviewDisplay(mHolder);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		mHolder = holder;
+//		try {
+//			Log.i("ERROR", "setting preview");
+//			camera.setPreviewDisplay(mHolder);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//			Log.e("ERROR", "Can no hold surfaceView");
+//		}
 	}
 
 	@Override

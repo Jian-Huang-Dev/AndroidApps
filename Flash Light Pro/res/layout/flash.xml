@@ -58,10 +58,122 @@
 
     <SeekBar
         android:id="@+id/brightness_seekBar"
-        android:layout_width="280dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/spinner"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:layout_centerHorizontal="true"
         android:max="99" />
+    
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/flash_button"
+        android:layout_above="@+id/brightness_seekBar"
+        android:padding="20dp" >
+
+        <TableRow
+            android:id="@+id/pad1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonOne"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonTwo"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/Button3"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonThree"
+                android:text="3" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pad2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button4"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonFour"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/Button5"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonFive"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/Button6"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonSix"
+                android:text="6" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pad3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button7"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonSeven"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/Button8"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonEight"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/Button9"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonNine"
+                android:text="9" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/pad4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button0"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonZero"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/ButtonDot"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonDot"
+                android:text="." />
+
+            <Button
+                android:id="@+id/buttonDel"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonDel"
+                android:text="Del"
+                android:textColor="@color/DarkBlue" />
+        </TableRow>
+    </TableLayout>
 
 </RelativeLayout>
