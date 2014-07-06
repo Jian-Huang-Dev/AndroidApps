@@ -1,5 +1,7 @@
 package johnbodun.flashlightpro;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -9,6 +11,9 @@ import android.hardware.Camera.Parameters;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceHolder.Callback;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
@@ -22,7 +27,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class Flash extends Activity {
+public class Flash extends Activity implements Callback {
 
 	private static Camera camera;
 	private ToggleButton flash_button;
@@ -33,12 +38,22 @@ public class Flash extends Activity {
 	Spinner spinner_color;
 	View layout;
 	PowerManager.WakeLock wakeLock;
-	
+	private SurfaceHolder mHolder;
+
 	int orangeColor;
 
 	// CountDownTimer countdown;
 	// RadioButton RadioButton1, RadioButton2, RadioButton3;
 	// Button start, stop;
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+
+		SurfaceView preview = (SurfaceView) findViewById(R.id.preview);
+		SurfaceHolder mHolder = preview.getHolder();
+		mHolder.addCallback(this);
+	}
 
 	@Override
 	public void onResume() {
@@ -77,7 +92,7 @@ public class Flash extends Activity {
 		layout = (View) findViewById(R.id.layout);
 		final SeekBar brightness_seekBar = (SeekBar) findViewById(R.id.brightness_seekBar);
 		final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-		
+
 		orangeColor = getResources().getColor(R.color.Orange);
 
 		// start.setVisibility(View.INVISIBLE);
@@ -127,8 +142,8 @@ public class Flash extends Activity {
 					boolean isChecked) {
 				if (checkBox.isChecked()) {
 
-//					flash_button.setVisibility(View.INVISIBLE);
-//					text.setVisibility(View.INVISIBLE);
+					// flash_button.setVisibility(View.INVISIBLE);
+					// text.setVisibility(View.INVISIBLE);
 					brightness_seekBar.setVisibility(View.VISIBLE);
 					spinner_color.setVisibility(View.VISIBLE);
 					brightness_seekBar.setClickable(true);
@@ -151,11 +166,11 @@ public class Flash extends Activity {
 				}
 
 				else {
-//					flash_button.setVisibility(View.VISIBLE);
-//					text.setVisibility(View.VISIBLE);
+					// flash_button.setVisibility(View.VISIBLE);
+					// text.setVisibility(View.VISIBLE);
 					brightness_seekBar.setVisibility(View.INVISIBLE);
 					spinner_color.setVisibility(View.INVISIBLE);
-//					layout.setBackgroundColor(Color.parseColor("#58F01D"));
+					// layout.setBackgroundColor(Color.parseColor("#58F01D"));
 				}
 			}
 		});
@@ -172,6 +187,10 @@ public class Flash extends Activity {
 
 		flash_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				p.setFlashMode(Parameters.FLASH_MODE_OFF);
+				camera.setParameters(p);
+				camera.stopPreview();
+				text.setText("Flash OFF");
 				if (!flash_button.isChecked()) {
 					Log.i("info", "torch is turn off!");
 					p.setFlashMode(Parameters.FLASH_MODE_OFF);
@@ -236,4 +255,29 @@ public class Flash extends Activity {
 		super.onDestroy();
 	}
 
+	@Override
+	public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2, int arg3) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void surfaceCreated(SurfaceHolder holder) {
+		// TODO Auto-generated method stub
+		mHolder = holder;
+		try {
+			Log.i("SurfaceHolder", "setting preview");
+			camera.setPreviewDisplay(mHolder);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void surfaceDestroyed(SurfaceHolder arg0) {
+		// TODO Auto-generated method stub
+		Log.i("SurfaceHolder", "stopping preview");
+        camera.stopPreview();
+        mHolder = null;
+	}
 }

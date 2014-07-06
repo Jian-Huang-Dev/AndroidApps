@@ -6,6 +6,11 @@
     android:background="#58F01D"
     tools:context=".Flash" >
 
+    <SurfaceView
+        android:id="@+id/preview"
+        android:layout_width="1dp"
+        android:layout_height="1dp" />
+
     <ToggleButton
         android:id="@+id/flash_button"
         android:layout_width="wrap_content"
@@ -28,8 +33,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:textStyle="bold"
-        android:text="BackLight" />
+        android:text="BackLight"
+        android:textStyle="bold" />
 
     <Spinner
         android:id="@+id/spinner"
