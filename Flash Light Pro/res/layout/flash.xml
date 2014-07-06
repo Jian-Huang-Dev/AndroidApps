@@ -16,16 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
-
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/flash_button"
-        android:layout_centerHorizontal="true"
-        android:text="LED Flash"
-        android:textStyle="bold" />
+        android:layout_marginTop="15dp"
+        android:textOn=""
+        android:textOff=""
+        android:background="@drawable/toggle_selector" />
 
     <CheckBox
         android:id="@+id/checkBox"
@@ -33,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="BackLight"
+        android:text="Background Picker"
+        android:textSize="@dimen/text_size"
         android:textStyle="bold" />
 
     <Spinner
@@ -61,17 +56,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/spinner"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:layout_centerHorizontal="true"
-        android:max="99" />
-    
+        android:max="99"
+        android:paddingLeft="50dp"
+        android:paddingRight="20dp" />
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/flash_button"
         android:layout_above="@+id/brightness_seekBar"
+        android:layout_below="@+id/flash_button"
         android:padding="20dp" >
 
         <TableRow
@@ -83,19 +78,22 @@
             <Button
                 android:id="@+id/button1"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonOne"
+                android:background="@color/Yellow"
+                android:onClick="clickButtonYellow"
                 android:text="1" />
 
             <Button
                 android:id="@+id/button2"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonTwo"
+                android:background="@color/Blue"
+                android:onClick="clickButtonBlue"
                 android:text="2" />
 
             <Button
                 android:id="@+id/Button3"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonThree"
+                android:background="@color/Red"
+                android:onClick="clickButtonRed"
                 android:text="3" />
         </TableRow>
 
@@ -108,19 +106,22 @@
             <Button
                 android:id="@+id/Button4"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonFour"
+                android:background="@color/Purple"
+                android:onClick="clickButtonPurple"
                 android:text="4" />
 
             <Button
                 android:id="@+id/Button5"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonFive"
+                android:background="@color/Green"
+                android:onClick="clickButtonGreen"
                 android:text="5" />
 
             <Button
                 android:id="@+id/Button6"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonSix"
+                android:background="@color/Gray"
+                android:onClick="clickButtonGray"
                 android:text="6" />
         </TableRow>
 
@@ -133,46 +134,23 @@
             <Button
                 android:id="@+id/Button7"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonSeven"
+                android:background="@color/Black"
+                android:onClick="clickButtonBlack"
                 android:text="7" />
 
             <Button
                 android:id="@+id/Button8"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonEight"
+                android:background="@color/White"
+                android:onClick="clickButtonWhite"
                 android:text="8" />
 
             <Button
                 android:id="@+id/Button9"
                 style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonNine"
+                android:background="@color/Orange"
+                android:onClick="clickButtonOrange"
                 android:text="9" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/pad4"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1" >
-
-            <Button
-                android:id="@+id/Button0"
-                style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonZero"
-                android:text="0" />
-
-            <Button
-                android:id="@+id/ButtonDot"
-                style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonDot"
-                android:text="." />
-
-            <Button
-                android:id="@+id/buttonDel"
-                style="@style/btn_digit_cell_style"
-                android:onClick="clickButtonDel"
-                android:text="Del"
-                android:textColor="@color/DarkBlue" />
         </TableRow>
     </TableLayout>
 

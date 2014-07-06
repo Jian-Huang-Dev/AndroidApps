@@ -17,15 +17,6 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
-    <dimen name="text_size">25sp</dimen>
+    <dimen name="text_size">40sp</dimen>
     
-    <style name="btn_digit_cell_style">
-       <item name="android:layout_width">0dip</item>
-       <item name="android:layout_weight">1</item>
-       <item name="android:layout_height">fill_parent</item>
-       <item name="android:gravity">center</item>
-       <item name="android:textColor">@color/DarkRed</item>
-       <item name="android:textStyle">bold</item>
-    </style>
-
 </resources>

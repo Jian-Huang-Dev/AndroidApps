@@ -22,6 +22,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -29,13 +30,14 @@ public class Flash extends DrawerActivity implements Callback {
 
 	private static Camera camera;
 	private ToggleButton flash_button;
-	private TextView text, percent;
+	private TextView percent;
 	float progress = 0.5f;
 	SeekBar brightness_seekBar;
 	CheckBox checkBox;
 	Spinner spinner_color;
 	View layout;
 	PowerManager.WakeLock wakeLock;
+	TableLayout tableLayout;
 	private SurfaceHolder mHolder;
 
 	int orangeColor;
@@ -81,14 +83,16 @@ public class Flash extends DrawerActivity implements Callback {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.flash);
+		// setContentView(R.layout.flash);
 		super.setInflaterOnView("home");
-		
+
 		flash_button = (ToggleButton) findViewById(R.id.flash_button);
-		text = (TextView) findViewById(R.id.text);
 		percent = (TextView) findViewById(R.id.percent);
 		spinner_color = (Spinner) findViewById(R.id.spinner);
 		layout = (View) findViewById(R.id.layout);
+		tableLayout = (TableLayout) findViewById(R.id.tableLayout);
+		tableLayout.setVisibility(View.INVISIBLE);
+
 		final SeekBar brightness_seekBar = (SeekBar) findViewById(R.id.brightness_seekBar);
 		final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
 
@@ -101,7 +105,6 @@ public class Flash extends DrawerActivity implements Callback {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON,
 				WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-		brightness_seekBar.setVisibility(View.INVISIBLE);
 		spinner_color.setVisibility(View.INVISIBLE);
 
 		Context context = this;
@@ -116,9 +119,10 @@ public class Flash extends DrawerActivity implements Callback {
 				.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 					public void onProgressChanged(SeekBar arg0, int arg1,
 							boolean arg2) {
+
 						progress = (float) arg1 / 100;
-						percent.setText(String.valueOf((int) (progress * 100))
-								+ "%");
+						percent.setText(String
+								.valueOf((int) ((progress + 0.01) * 100)) + "%");
 						WindowManager.LayoutParams layoutParams = getWindow()
 								.getAttributes();
 						layoutParams.screenBrightness = (float) (progress + 0.01);
@@ -143,9 +147,8 @@ public class Flash extends DrawerActivity implements Callback {
 
 					// flash_button.setVisibility(View.INVISIBLE);
 					// text.setVisibility(View.INVISIBLE);
-					brightness_seekBar.setVisibility(View.VISIBLE);
 					spinner_color.setVisibility(View.VISIBLE);
-					brightness_seekBar.setClickable(true);
+					tableLayout.setVisibility(View.VISIBLE);
 
 					spinner_color
 							.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -167,7 +170,7 @@ public class Flash extends DrawerActivity implements Callback {
 				else {
 					// flash_button.setVisibility(View.VISIBLE);
 					// text.setVisibility(View.VISIBLE);
-					brightness_seekBar.setVisibility(View.INVISIBLE);
+					tableLayout.setVisibility(View.INVISIBLE);
 					spinner_color.setVisibility(View.INVISIBLE);
 					// layout.setBackgroundColor(Color.parseColor("#58F01D"));
 				}
@@ -189,19 +192,16 @@ public class Flash extends DrawerActivity implements Callback {
 				p.setFlashMode(Parameters.FLASH_MODE_OFF);
 				camera.setParameters(p);
 				camera.stopPreview();
-				text.setText("Flash OFF");
 				if (!flash_button.isChecked()) {
 					Log.i("info", "torch is turn off!");
 					p.setFlashMode(Parameters.FLASH_MODE_OFF);
 					camera.setParameters(p);
 					camera.stopPreview();
-					text.setText("Flash OFF");
 				} else {
 					Log.i("info", "torch is turn on!");
 					p.setFlashMode(Parameters.FLASH_MODE_TORCH);
 					camera.setParameters(p);
 					camera.startPreview();
-					text.setText("Flash ON");
 				}
 			}
 		});
@@ -229,6 +229,7 @@ public class Flash extends DrawerActivity implements Callback {
 			break;
 		case 6:
 			layout.setBackgroundColor(Color.BLACK);
+			checkBox.setTextColor(orangeColor);
 			break;
 		case 7:
 			layout.setBackgroundColor(Color.WHITE);
@@ -263,21 +264,58 @@ public class Flash extends DrawerActivity implements Callback {
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
 		// TODO Auto-generated method stub
-//		mHolder = holder;
-//		try {
-//			Log.i("ERROR", "setting preview");
-//			camera.setPreviewDisplay(mHolder);
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//			Log.e("ERROR", "Can no hold surfaceView");
-//		}
+		// mHolder = holder;
+		// try {
+		// Log.i("ERROR", "setting preview");
+		// camera.setPreviewDisplay(mHolder);
+		// } catch (IOException e) {
+		// e.printStackTrace();
+		// Log.e("ERROR", "Can no hold surfaceView");
+		// }
 	}
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder arg0) {
 		// TODO Auto-generated method stub
 		Log.i("SurfaceHolder", "stopping preview");
-        camera.stopPreview();
-        mHolder = null;
+		camera.stopPreview();
+		mHolder = null;
+	}
+
+	public void clickButtonYellow(View v) {
+		layout.setBackgroundColor(Color.YELLOW);
+	}
+
+	public void clickButtonBlue(View v) {
+		layout.setBackgroundColor(Color.BLUE);
+	}
+
+	public void clickButtonRed(View v) {
+		layout.setBackgroundColor(Color.RED);
+	}
+
+	public void clickButtonPurple(View v) {
+		// purple
+		layout.setBackgroundColor(Color.parseColor("#800080"));
+	}
+
+	public void clickButtonGreen(View v) {
+		layout.setBackgroundColor(Color.GREEN);
+	}
+
+	public void clickButtonGray(View v) {
+		layout.setBackgroundColor(Color.GRAY);
+	}
+
+	public void clickButtonBlack(View v) {
+		layout.setBackgroundColor(Color.BLACK);
+	}
+
+	public void clickButtonWhite(View v) {
+		layout.setBackgroundColor(Color.WHITE);
+	}
+
+	public void clickButtonOrange(View v) {
+		layout.setBackgroundColor(orangeColor);
 	}
 }

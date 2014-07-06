@@ -70,13 +70,13 @@ public class DrawerActivity extends Activity {
 		R.string.drawer_close /* "close drawer" description for accessibility */
 		) {
 			public void onDrawerClosed(View view) {
-				getActionBar().setTitle("Math Tool Box");
+				getActionBar().setTitle("Flash Light Pro");
 				// invalidateOptionsMenu(); // creates call to
 				// onPrepareOptionsMenu()
 			}
 
 			public void onDrawerOpened(View drawerView) {
-				getActionBar().setTitle("Quick Navigation Menu");
+				getActionBar().setTitle("More ...");
 				// invalidateOptionsMenu(); // creates call to
 				// onPrepareOptionsMenu()
 			}
