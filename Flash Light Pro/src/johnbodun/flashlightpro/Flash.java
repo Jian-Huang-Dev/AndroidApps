@@ -1,7 +1,8 @@
 package johnbodun.flashlightpro;
 
+import java.io.IOException;
+
 import jianhuang.flashlightpro.navdrawer.DrawerActivity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -38,6 +39,7 @@ public class Flash extends DrawerActivity implements Callback {
 	PowerManager.WakeLock wakeLock;
 	TableLayout tableLayout;
 	private SurfaceHolder mHolder;
+	private boolean flash = true;
 
 	int orangeColor;
 
@@ -169,6 +171,7 @@ public class Flash extends DrawerActivity implements Callback {
 		// if device support camera?
 		if (!pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
 			Log.e("ERROR", "Device has no camera!");
+			flash = false;
 			camera_availability.setVisibility(View.VISIBLE);
 			camera_availability.setText(" Camera flash is not found!");
 			return;
@@ -254,23 +257,30 @@ public class Flash extends DrawerActivity implements Callback {
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		// TODO Auto-generated method stub
-		// mHolder = holder;
-		// try {
-		// Log.i("ERROR", "setting preview");
-		// camera.setPreviewDisplay(mHolder);
-		// } catch (IOException e) {
-		// e.printStackTrace();
-		// Log.e("ERROR", "Can no hold surfaceView");
-		// }
+		if (flash) {
+			mHolder = holder;
+			try {
+				Log.i("ERROR", "setting preview");
+				camera.setPreviewDisplay(mHolder);
+			} catch (IOException e) {
+				e.printStackTrace();
+				Log.e("ERROR", "Can no hold surfaceView");
+			}
+		} else {
+			// do nothing, since this will crash the app if the device has no flash
+		}
+		
 	}
 
 	@Override
 	public void surfaceDestroyed(SurfaceHolder arg0) {
-		// TODO Auto-generated method stub
-		Log.i("SurfaceHolder", "stopping preview");
-		camera.stopPreview();
-		mHolder = null;
+		if (flash) {
+			Log.i("SurfaceHolder", "stopping preview");
+			camera.stopPreview();
+			mHolder = null;
+		} else {
+			// do nothing, since this will crash the app if the device has no flash
+		}
 	}
 
 	public void clickButtonYellow(View v) {
