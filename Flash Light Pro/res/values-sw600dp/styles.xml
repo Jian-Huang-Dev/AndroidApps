@@ -18,5 +18,6 @@
     </style>
     
     <dimen name="text_size">40sp</dimen>
+    <dimen name="padding_bottom">50dp</dimen>
     
 </resources>

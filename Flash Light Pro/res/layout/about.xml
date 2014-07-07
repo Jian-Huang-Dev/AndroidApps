@@ -3,91 +3,25 @@
     android:id="@+id/widget100"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/Red"
+    android:background="@color/Transparent"
     android:paddingTop="20dp" >
 
-    <TableLayout
-        android:id="@+id/tableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_above="@+id/center_line" >
-
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
-
-            <LinearLayout
-                android:id="@+id/left_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-
-            <LinearLayout
-                android:id="@+id/right_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
-
-            <LinearLayout
-                android:id="@+id/left_layout2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-
-            <LinearLayout
-                android:id="@+id/right_layout2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" >
-
-            <LinearLayout
-                android:id="@+id/left_layout3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-
-            <LinearLayout
-                android:id="@+id/right_layout3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2"
-                android:background="@color/Red"
-                android:orientation="horizontal" />
-        </TableRow>
-    </TableLayout>
-
-    <LinearLayout
-        android:id="@+id/center_line"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:orientation="horizontal" />
+        android:layout_marginTop="132dp"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/dialogButtonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:text="OK" />
 
 </RelativeLayout>

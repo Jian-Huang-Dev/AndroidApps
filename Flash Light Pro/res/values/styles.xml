@@ -17,7 +17,8 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
-    <dimen name="text_size">25sp</dimen>
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="padding_bottom">15dp</dimen>
     
     <style name="btn_digit_cell_style">
        <item name="android:layout_width">0dip</item>

@@ -9,7 +9,7 @@ public class About extends DrawerActivity {
 		super.onCreate(savedInstanceState);
 
 		super.setInflaterOnView("about");
-		super.getDrawerList().setItemChecked(6, true);
+		super.getDrawerList().setItemChecked(1, true);
 
 	}
 }

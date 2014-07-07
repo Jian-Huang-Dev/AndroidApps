@@ -1,6 +1,7 @@
 package johnbodun.flashlightpro;
 
 import jianhuang.flashlightpro.navdrawer.DrawerActivity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -17,9 +18,7 @@ import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TableLayout;
@@ -30,10 +29,10 @@ public class Flash extends DrawerActivity implements Callback {
 
 	private static Camera camera;
 	private ToggleButton flash_button;
-	private TextView percent;
+	private TextView percent, camera_availability;
 	float progress = 0.5f;
 	SeekBar brightness_seekBar;
-	CheckBox checkBox;
+	Button backgroundPicker;
 	Spinner spinner_color;
 	View layout;
 	PowerManager.WakeLock wakeLock;
@@ -88,13 +87,14 @@ public class Flash extends DrawerActivity implements Callback {
 
 		flash_button = (ToggleButton) findViewById(R.id.flash_button);
 		percent = (TextView) findViewById(R.id.percent);
+		camera_availability = (TextView) findViewById(R.id.camera_availability);
 		spinner_color = (Spinner) findViewById(R.id.spinner);
 		layout = (View) findViewById(R.id.layout);
 		tableLayout = (TableLayout) findViewById(R.id.tableLayout);
 		tableLayout.setVisibility(View.INVISIBLE);
 
 		final SeekBar brightness_seekBar = (SeekBar) findViewById(R.id.brightness_seekBar);
-		final CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
+		backgroundPicker = (Button) findViewById(R.id.backgroundPicker);
 
 		orangeColor = getResources().getColor(R.color.Orange);
 
@@ -106,8 +106,9 @@ public class Flash extends DrawerActivity implements Callback {
 				WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 		spinner_color.setVisibility(View.INVISIBLE);
+		camera_availability.setVisibility(View.INVISIBLE);
 
-		Context context = this;
+		final Context context = this;
 
 		PackageManager pm = context.getPackageManager();
 		PowerManager pom = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -140,40 +141,27 @@ public class Flash extends DrawerActivity implements Callback {
 					}
 				});
 
-		checkBox.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			public void onCheckedChanged(CompoundButton buttonView,
-					boolean isChecked) {
-				if (checkBox.isChecked()) {
+		backgroundPicker.setOnClickListener(new OnClickListener() {
 
-					// flash_button.setVisibility(View.INVISIBLE);
-					// text.setVisibility(View.INVISIBLE);
-					spinner_color.setVisibility(View.VISIBLE);
-					tableLayout.setVisibility(View.VISIBLE);
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				spinner_color.setVisibility(View.VISIBLE);
+				tableLayout.setVisibility(View.VISIBLE);
 
-					spinner_color
-							.setOnItemSelectedListener(new OnItemSelectedListener() {
-								public void onItemSelected(
-										AdapterView<?> parentView,
-										View selecedItemView, int position,
-										long id) {
-									setBackgroundColor(position);
-								}
+				spinner_color
+						.setOnItemSelectedListener(new OnItemSelectedListener() {
+							public void onItemSelected(
+									AdapterView<?> parentView,
+									View selecedItemView, int position, long id) {
+								setBackgroundColor(position);
+							}
 
-								@Override
-								public void onNothingSelected(
-										AdapterView<?> arg0) {
-									// TODO Auto-generated method stub
-								}
-							});
-				}
-
-				else {
-					// flash_button.setVisibility(View.VISIBLE);
-					// text.setVisibility(View.VISIBLE);
-					tableLayout.setVisibility(View.INVISIBLE);
-					spinner_color.setVisibility(View.INVISIBLE);
-					// layout.setBackgroundColor(Color.parseColor("#58F01D"));
-				}
+							@Override
+							public void onNothingSelected(AdapterView<?> parent) {
+								// TODO Auto-generated method stub
+							}
+						});
 			}
 		});
 
@@ -181,6 +169,8 @@ public class Flash extends DrawerActivity implements Callback {
 		// if device support camera?
 		if (!pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
 			Log.e("ERROR", "Device has no camera!");
+			camera_availability.setVisibility(View.VISIBLE);
+			camera_availability.setText(" Camera flash is not found!");
 			return;
 		}
 
@@ -208,6 +198,7 @@ public class Flash extends DrawerActivity implements Callback {
 	}
 
 	protected void setBackgroundColor(int position) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		switch (position) {
 		case 0:
 			layout.setBackgroundColor(Color.YELLOW);
@@ -229,7 +220,7 @@ public class Flash extends DrawerActivity implements Callback {
 			break;
 		case 6:
 			layout.setBackgroundColor(Color.BLACK);
-			checkBox.setTextColor(orangeColor);
+			backgroundPicker.setTextColor(orangeColor);
 			break;
 		case 7:
 			layout.setBackgroundColor(Color.WHITE);
@@ -283,39 +274,48 @@ public class Flash extends DrawerActivity implements Callback {
 	}
 
 	public void clickButtonYellow(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.YELLOW);
 	}
 
 	public void clickButtonBlue(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.BLUE);
 	}
 
 	public void clickButtonRed(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.RED);
 	}
 
 	public void clickButtonPurple(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		// purple
 		layout.setBackgroundColor(Color.parseColor("#800080"));
 	}
 
 	public void clickButtonGreen(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.GREEN);
 	}
 
 	public void clickButtonGray(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.GRAY);
 	}
 
 	public void clickButtonBlack(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.BLACK);
 	}
 
 	public void clickButtonWhite(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(Color.WHITE);
 	}
 
 	public void clickButtonOrange(View v) {
+		tableLayout.setVisibility(View.INVISIBLE);
 		layout.setBackgroundColor(orangeColor);
 	}
 }

@@ -2,18 +2,12 @@ package jianhuang.flashlightpro.navdrawer;
 
 import java.util.Date;
 
-import johnbodun.flashlightpro.About;
 import johnbodun.flashlightpro.R;
-import johnbodun.flashlightpro.R.drawable;
-import johnbodun.flashlightpro.R.id;
-import johnbodun.flashlightpro.R.layout;
-import johnbodun.flashlightpro.R.string;
-
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -24,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -34,6 +29,7 @@ public class DrawerActivity extends Activity {
 	private ActionBarDrawerToggle mDrawerToggle;
 	private int press = 0;
 	private long currentTime = 0, latterTime = 0;
+	final Context context = this;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -109,13 +105,10 @@ public class DrawerActivity extends Activity {
 	}
 
 	private void selectItem(int position) {
-		// update the main content by replacing fragments
 		Intent intent = null;
 		switch (position) {
 		case 0:
-			intent = new Intent(this, About.class);
-			startActivity(intent);
-			finish();
+			getDialogWindow();
 			break;
 		case 1:
 			intent = new Intent(Intent.ACTION_VIEW,
@@ -187,8 +180,7 @@ public class DrawerActivity extends Activity {
 
 	public ObjectDrawerItem[] getDrawerItem() {
 		ObjectDrawerItem[] drawerItem = new ObjectDrawerItem[3];
-		drawerItem[0] = new ObjectDrawerItem(R.drawable.drawer_about,
-				"About");
+		drawerItem[0] = new ObjectDrawerItem(R.drawable.drawer_about, "About");
 		drawerItem[1] = new ObjectDrawerItem(R.drawable.drawer_more_apps,
 				"More apps");
 		drawerItem[2] = new ObjectDrawerItem(R.drawable.drawer_rate,
@@ -219,5 +211,23 @@ public class DrawerActivity extends Activity {
 			// reset press count
 			press = 0;
 		}
+	}
+
+	protected void getDialogWindow() {
+		final Dialog dialog = new Dialog(context);
+		dialog.setContentView(R.layout.about);
+		dialog.setTitle("About ...");
+
+		Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+		dialogButton.setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				dialog.dismiss();
+			}
+		});
+
+		dialog.show();
 	}
 }

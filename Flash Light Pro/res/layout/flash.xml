@@ -17,12 +17,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:textOn=""
+        android:background="@drawable/toggle_selector"
         android:textOff=""
-        android:background="@drawable/toggle_selector" />
+        android:textOn="" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
+    <Button
+        android:id="@+id/backgroundPicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -33,8 +33,8 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:entries="@array/spinner_color"
@@ -45,9 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignTop="@+id/spinner"
-        android:layout_toLeftOf="@+id/checkBox"
-        android:layout_toRightOf="@+id/spinner"
+        android:layout_toLeftOf="@+id/backgroundPicker"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -58,6 +56,7 @@
         android:layout_above="@+id/spinner"
         android:layout_centerHorizontal="true"
         android:max="99"
+        android:paddingBottom="@dimen/padding_bottom"
         android:paddingLeft="50dp"
         android:paddingRight="20dp" />
 
@@ -153,5 +152,15 @@
                 android:text="9" />
         </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/camera_availability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/backgroundPicker"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/percent"
+        android:textStyle="bold" >
+    </TextView>
 
 </RelativeLayout>
