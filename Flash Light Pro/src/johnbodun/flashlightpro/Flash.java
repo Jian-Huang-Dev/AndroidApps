@@ -2,6 +2,9 @@ package johnbodun.flashlightpro;
 
 import java.io.IOException;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+
+import jianhuang.colorflashlight.gatracker.MyApplication;
 import jianhuang.flashlightpro.navdrawer.DrawerActivity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -51,6 +54,9 @@ public class Flash extends DrawerActivity implements Callback {
 	protected void onStart() {
 		super.onStart();
 
+		//Get an Analytics tracker to report app starts & uncaught exceptions etc.
+		GoogleAnalytics.getInstance(this).reportActivityStart(this);
+
 		SurfaceView preview = (SurfaceView) findViewById(R.id.preview);
 		SurfaceHolder mHolder = preview.getHolder();
 		mHolder.addCallback(this);
@@ -69,6 +75,11 @@ public class Flash extends DrawerActivity implements Callback {
 	@Override
 	protected void onStop() {
 		super.onStop();
+		
+		//Stop the analytics tracking
+		GoogleAnalytics.getInstance(this).reportActivityStop(this);
+
+		
 		if (camera != null) {
 			camera.release();
 			camera = null;
@@ -86,6 +97,9 @@ public class Flash extends DrawerActivity implements Callback {
 		super.onCreate(savedInstanceState);
 		// setContentView(R.layout.flash);
 		super.setInflaterOnView("home");
+		
+		//Get a Tracker (should auto-report)
+		((MyApplication) getApplication()).getTracker(MyApplication.TrackerName.APP_TRACKER);
 
 		flash_button = (ToggleButton) findViewById(R.id.flash_button);
 		percent = (TextView) findViewById(R.id.percent);
