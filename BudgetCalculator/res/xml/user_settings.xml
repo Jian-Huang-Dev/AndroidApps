@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Settings" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="disableNotification_budget"
+            android:summary="Disable notification"
+            android:title="Disable notification" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
+    
+    <tinkercoder.budgetcalculator.preferenceactivity.adMobPreference
+        android:layout="@layout/admob">
+        </tinkercoder.budgetcalculator.preferenceactivity.adMobPreference>
+        
+</PreferenceScreen>

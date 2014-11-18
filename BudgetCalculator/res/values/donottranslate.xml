@@ -1,0 +1,55 @@
+<resources>
+
+    <!-- *budget calculator -->
+    <string name="drawer_budget">Check My Budget</string>
+    <string name="drawer_setting">Setting</string>
+    <string name="drawer_share">Share</string>
+    <string name="drawer_more_apps">Get More Apps</string>
+    <string name="drawer_rate">Rate This App</string>
+    <string name="drawer_about">About</string>
+    <!--  -->
+    <string name="budget_calculator">Budget Calculator</string>
+    <string name="household_budget">Household Budget</string>
+    <string name="university_budget">University Budget</string>
+    <string name="income">Income</string>
+    <string name="reset_data">Reset Data</string>
+    <string name="expense">Expense</string>
+    <string name="calculate">Calculate</string>
+    <!-- \household budget -->
+    <string name="budget_employment_income">Employment Income</string>
+    <string name="budget_other_income">Other Income</string>
+    <string name="budget_grocery">Grocery</string>
+    <string name="budget_internet">Internet</string>
+    <string name="budget_cable">Cable</string>
+    <string name="budget_phone_bill">Phone Bill</string>
+    <string name="budget_utility_water">Utility (Water)</string>
+    <string name="budget_utility_electricity">Utility (Electricity)</string>
+    <string name="budget_morgage">Mortgage</string>
+    <string name="budget_house_rental">House Rental</string>
+    <string name="budget_transportation">Transportation</string>
+    <string name="budget_auto_insurance">Auto Insurance</string>
+    <string name="budget_gas">Gas</string>
+    <string name="budget_other_expense">Other Expense</string>
+    <!-- \addition for unviersity budget -->
+    <string name="budget_osap_load">OSAP/Loan</string>
+    <string name="budget_bursary">Bursary</string>
+    <string name="budget_scholarship">Scholarship</string>
+    <string name="budget_personal_saving">Personal Saving</string>
+    <string name="budget_textbook">TextBook</string>
+    <string name="budget_tuition">Tuition</string>
+
+    <!--  -->
+    <string name="notification_title">Rate Check My Budget :)</string>
+    <string name="notification_text">Click here to disable notification!</string>
+    <string name="drawer_open_name">Quick Navigation Menu</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="app_name">Check My Budget</string>
+    <string name="share_title">Share</string>
+    <string name="rate_title">Rate</string>
+    <string name="about_us">Tinkercoder started since May 1st, 2014\nOur focus is to deliver user-friendly mobile apps\n</string>
+	
+    <!-- dialog -->
+    <string name="dialog_title">Your Budget Summary</string>
+    <string name="dialog_ok">Okay</string>
+</resources>

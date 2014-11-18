@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tabrow_layout"
+    style="@style/screen_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/layout_padding_left"
+        android:paddingRight="@dimen/layout_padding_right" >
+
+        <TableRow
+            android:id="@+id/tabRow"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/household_tab"
+                style="@style/budget_tab_text_style"
+                android:text="@string/household_budget" />
+
+            <Button
+                android:id="@+id/university_tab"
+                style="@style/budget_tab_text_style"
+                android:text="@string/university_budget" />
+        </TableRow>
+
+        <FrameLayout
+            android:id="@+id/university_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/tabRow"
+            android:layout_marginTop="10dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:id="@+id/uni_table_layout_income"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/uni_table_row0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp" >
+
+                        <Button
+                            android:id="@+id/uni_restart_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:text="@string/restart_activity" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/uni_reset_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:text="@string/reset_data" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/uni_cal_btn2"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:text="@string/calculate" >
+                        </Button>
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp" >
+
+                        <TextView
+                            android:id="@+id/uni_text_view_income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/income"
+                            android:textColor="@color/Orange2"
+                            android:textSize="@dimen/budget_title_size"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/uni_add_income_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/add_button"
+                            android:text="@string/add_custom" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/uni_delete_income_btn"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/del_button"
+                            android:text="@string/delete_custom" >
+                        </Button>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_osap_load"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_osap_loan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_bursary"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_bursary"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_scholarship"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_scholarship"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_personal_saving"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_personal_saving"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/uni_table_layout_expense"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/table_row21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:id="@+id/uni_text_view_expense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/expense"
+                            android:textColor="@color/Orange2"
+                            android:textSize="@dimen/budget_title_size"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/uni_add_expense_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/add_button"
+                            android:text="@string/add_custom" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/uni_delete_expense_btn"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/del_button"
+                            android:text="@string/delete_custom" >
+                        </Button>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_tuition"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_tuition"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_textbook"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_textbook"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_grocery"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_grocery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_internet"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_internet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_cable"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_cable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_phone_bill"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_phone_bill"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_utility_water"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_utility_water"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_utility_electricity"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_utility_elec"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_transportation"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_trans"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_house_rental"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_house_rental"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/uni_table_row15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/uni_textView15"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_other_expense"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/uni_edit_oth_expense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+                </TableLayout>
+
+                <TableRow
+                    android:id="@+id/uni_table_row16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/uni_result_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="2"
+                        android:text=""
+                        android:textColor="@color/DarkOrange"
+                        android:textSize="@dimen/budget_text_size"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/uni_cal_btn"
+                        style="@style/budget_button_style"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/calculate" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/uni_table_row_adview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp" >
+
+                    <com.google.android.gms.ads.AdView
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/uni_adView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ads:adSize="BANNER"
+                        ads:adUnitId="@string/ad_unit_id" />
+                </TableRow>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/household_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/tabRow"
+            android:layout_marginTop="10dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TableLayout
+                    android:id="@+id/table_layout_income"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/row0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp" >
+
+                        <Button
+                            android:id="@+id/restart_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:text="@string/restart_activity" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/reset_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:text="@string/reset_data" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/hd_cal_btn2"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:text="@string/calculate" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp" >
+
+                        <TextView
+                            android:id="@+id/text_view_income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/income"
+                            android:textColor="@color/Orange2"
+                            android:textSize="@dimen/budget_title_size"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/add_income_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/add_button"
+                            android:text="@string/add_custom" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/delete_income_btn"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/del_button"
+                            android:text="@string/delete_custom" >
+                        </Button>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_employment_income"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_emp_income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_other_income"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_other_income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/table_layout_expense"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TableRow
+                        android:id="@+id/table_row2136"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp" >
+
+                        <TextView
+                            android:id="@+id/text_view_expense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="@string/expense"
+                            android:textColor="@color/Orange2"
+                            android:textSize="@dimen/budget_title_size"
+                            android:textStyle="bold" />
+
+                        <Button
+                            android:id="@+id/add_expense_btn"
+                            style="@style/budget_button_style"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/add_button"
+                            android:text="@string/add_custom" >
+                        </Button>
+
+                        <Button
+                            android:id="@+id/delete_expense_btn"
+                            style="@style/budget_button_style"
+                            android:layout_weight="1"
+                            android:drawableRight="@drawable/del_button"
+                            android:text="@string/delete_custom" >
+                        </Button>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_grocery"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_grocery"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_internet"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_internet"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_cable"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_cable"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_phone_bill"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_phone_bill"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_utility_water"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_utility_water"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView8"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_utility_electricity"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_utility_elec"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_morgage"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_mortgage"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_house_rental"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_house_rental"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_transportation"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_trans"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_auto_insurance"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_auto_ins"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_gas"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_gas"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/table_row14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:text="@string/budget_other_expense"
+                            android:textColor="@color/DarkOrange"
+                            android:textSize="@dimen/budget_text_size"
+                            android:textStyle="bold" />
+
+                        <EditText
+                            android:id="@+id/edit_oth_expense"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center_horizontal"
+                            android:inputType="numberDecimal"
+                            android:textColor="@color/DarkOrange"
+                            android:textStyle="bold" >
+                        </EditText>
+                    </TableRow>
+                </TableLayout>
+
+                <TableRow
+                    android:id="@+id/table_row15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp" >
+
+                    <TextView
+                        android:id="@+id/result_display"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="2"
+                        android:text=""
+                        android:textColor="@color/DarkOrange"
+                        android:textSize="@dimen/budget_text_size"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/hd_cal_btn"
+                        style="@style/budget_button_style"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_button"
+                        android:text="@string/calculate" >
+                    </Button>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/table_row_adview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="100dp" >
+
+                    <com.google.android.gms.ads.AdView
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/adView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        ads:adSize="BANNER"
+                        ads:adUnitId="@string/ad_unit_id" />
+                </TableRow>
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+
+</ScrollView>

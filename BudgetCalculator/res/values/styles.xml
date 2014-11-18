@@ -1,0 +1,135 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- *tip calculator -->
+    <dimen name="logo_text_size">50sp</dimen>
+    <dimen name="padding">2dp</dimen>
+    <dimen name="about_text_size">16sp</dimen>
+    <dimen name="logo_width">150dp</dimen>
+    <dimen name="logo_height">150dp</dimen>
+    <dimen name="spinner_text_size">10sp</dimen>
+    <dimen name="country_text_size">16sp</dimen>
+    <dimen name="summary_text_size">9sp</dimen>
+    <dimen name="layout_padding_left">0dp</dimen>
+    <dimen name="layout_padding_right">0dp</dimen>
+
+    <style name="btn_digit_cell_style">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/btn_digit</item>
+        <item name="android:textSize">@dimen/btn_digit_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="tip_info_txt_style">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/DarkOrange</item>
+        <item name="android:textSize">@dimen/country_text_size</item>        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="button_setting_rate_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:drawableLeft">@drawable/icon_rate</item>
+        <item name="android:drawableRight">@drawable/icon_rate</item>
+        <item name="android:textColor">@color/DarkBlue</item>
+        <item name="android:text">@string/drawer_rate</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <!-- common style -->
+    <style name="screen_background">
+        <item name="android:background">@drawable/screen_background</item>
+    </style>
+
+    <!-- budget calculator -->
+    <dimen name="budget_text_size">12sp</dimen>
+    <dimen name="budget_title_size">30sp</dimen>
+    <dimen name="budget_dialog_width">300sp</dimen>
+    <dimen name="tab_text_size">14sp</dimen>
+    
+    
+    <style name="budget_tab_text_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/tab_text_size</item>
+        <item name="android:textColor">@color/DarkGreen</item>
+        <item name="android:background">@drawable/btn_digit</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="budget_button_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/DarkRed</item>
+        <item name="android:background">@drawable/custom_button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:paddingRight">3dp</item>
+    </style>
+
+    <!-- Drawer -->
+    <dimen name="drawer_text_size">18sp</dimen>
+    <dimen name="drawer_title_size">26sp</dimen>
+    <dimen name="drawer_padding">5dp</dimen>
+    <dimen name="drawer_width">240dp</dimen>
+    <!--  -->
+    <dimen name="btn_digit_text_size">20sp</dimen>
+    <dimen name="btn_operation_text_size">40sp</dimen>
+    <dimen name="btn_function_text_size">30sp</dimen>
+    <dimen name="btn_clear_text_size">30sp</dimen>
+    <dimen name="display_text_size">30sp</dimen>
+    <dimen name="left_right_padding">16sp</dimen>
+    <dimen name="top_bottom_padding">16sp</dimen>
+    <dimen name="group_padding">16sp</dimen>
+
+    <style name="display_style">
+        <item name="android:textSize">@dimen/display_text_size</item>
+        <item name="android:inputType">text|textNoSuggestions</item>
+        <item name="android:gravity">right|center_vertical</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingBottom">0dp</item>
+    </style>
+
+    <style name="btn_row_style">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+</resources>

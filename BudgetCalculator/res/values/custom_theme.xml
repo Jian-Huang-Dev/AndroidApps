@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+<style name="parent_theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+    <!--
+        Theme customizations available in newer API levels can go in
+        res/values-vXX/styles.xml, while customizations related to
+        backward-compatibility can go here.
+    -->
+</style>
+
+<!-- Application theme. -->
+<style name="custom_theme" parent="parent_theme">
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <item name="android:soundEffectsEnabled">true</item>
+</style>
+
+</resources>
