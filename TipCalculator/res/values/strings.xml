@@ -1,0 +1,74 @@
+<resources>
+
+    <string name="tip_person">Tip/Person</string>
+    <string name="total_person">Total/Person</string>
+    <string name="bill_total">Bill Total</string>
+    <string name="tip_percent">Tip %</string>
+    <string name="num_of_people">Number of People</string>
+    <string name="the_bill">The Bill</string>
+    <string name="tax_rate">Tax Rate %</string>
+    <string name="round_upward">Round Upwards</string>
+    <string name="reset">Reset Page Data</string>
+    <string name="share_title">Share</string>
+    <string name="rate_title">Rate</string>
+    <string name="info_title">Info</string>
+    <string name="ad_unit_id">ca-app-pub-5296614273855072/8003464146</string>
+    <!--  -->
+    <string name="drawer_tip">Tip Calculator</string>
+    <string name="drawer_setting">Setting</string>
+    <string name="drawer_share">Share</string>
+    <string name="drawer_more_apps">Get More Apps</string>
+    <string name="drawer_rate">Rate Tip Calculator</string>
+    <string name="drawer_info">Tipping Info</string>
+    <string name="drawer_about">About</string>
+    <!--  -->
+    <string name="app_name">Tip Calculator</string>
+    <string name="drawer_open_name">Quick Navigation Menu</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="notification_title">Rate Tip Calculator :)</string>
+    <string name="notification_text">Click here to disable nofification!</string>
+    <string name="logo_name">Tinkercoder</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="about_us">Tinkercoder started since May 1st, 2014\nOur focus is to deliver user-friendly mobile apps\n</string>
+
+    <!-- *tipping info -->
+    <string name="info_tip_definition">*Tip also called gratuity: extra payment left by guests/customers.</string>
+    <string name="info_summary">*In most cases, a tip in the range of 10% - 20% is perfectly acceptable!</string>
+    <string name="info_usa">USA: 15\ - 20%</string>
+    <string name="info_canada">Canada: 15\ - 20%</string>
+    <string name="info_mexico">Mexico: 10\ - 15%</string>
+    <string name="info_uk">UK: 10\ - 15%</string>
+    <string name="info_switzerland">Switzerland: 15%</string>
+    <string name="info_germany">Germany: 10\ - 15%</string>
+    <string name="info_italy">Italy: 10%</string>
+    <string name="info_france">France: 10%</string>
+    <string name="info_turkey">Turkey: 10%</string>
+    <string name="info_egypt">Egypt:  5\ - 10%</string>
+    <string name="info_china">China: No tip</string>
+    <string name="info_japan">Japan: No tip</string>
+    <string name="info_south_korea">South Korea: No tip</string>
+    <string name="info_india">India: 15%</string>
+    <string name="info_australia">Australia:  10\ - 15%</string>
+    <string name="info_brazil">Brazil: No tip</string>
+    <string name="info_argentina">Argentina: 10%</string>
+    <string name="info_warning">The above data is for guideline only!</string>
+    
+    <!--
+    <string name="info_main_title">How much should you tip?</string>
+    <string name="info_sub_restaurant">Restaurant Tipping</string>
+    <string name="info_sub_hotel_resort">Tipping at a Hotel / Resort</string>
+    <string name="info_sub_transporation">Transportation Tipping</string>
+    <string name="info_sub_salon_massage">Salon / Message Tipping</string>
+    
+    <string name="info_ssub_waiter">Waiter:</string>
+    <string name="info_ssub_bartender">Bartender/Cocktail Waitress:</string>
+    <string name="info_ssub_coat_check">Coat Check</string>
+    <string name="info_text_waiter">\ Typically 15% - 20% of the bill.</string>
+    <string name="info_ssub_doorman">Bellman:</string>
+    <string name="info_ssub_chambermaid">Chambermaid:</string>
+    <string name="info_ssub_room_service">Room Service:</string>
+    <string name="info_ssub_cabs">Info</string>
+    -->
+
+</resources>

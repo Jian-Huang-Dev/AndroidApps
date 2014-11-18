@@ -1,0 +1,13 @@
+<resources>
+    <string name="tip_person">Tip/Person</string>
+	<string name="total_person">Total/Person</string>
+	<string name="bill_total">Bill Total</string>
+	<string name="tip_percent">Tip %</string>
+	<string name="num_of_people">Number of People</string>
+	<string name="the_bill">The Bill</string>
+	
+	<string name="logo_name">Tinkercoder</string>
+	<string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/screen_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tip_definition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/info_tip_definition"
+            android:textColor="@color/DarkOrange"
+            android:textSize="@dimen/summary_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tip_definition"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="@string/info_summary"
+            android:textColor="@color/DarkOrange"
+            android:textSize="@dimen/summary_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/usa"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/summary"
+            android:text="@string/info_usa" />
+
+        <TextView
+            android:id="@+id/canada"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/usa"
+            android:text="@string/info_canada" />
+
+        <TextView
+            android:id="@+id/mexico"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/canada"
+            android:text="@string/info_mexico" />
+
+        <TextView
+            android:id="@+id/uk"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/mexico"
+            android:text="@string/info_uk" />
+
+        <TextView
+            android:id="@+id/switzerland"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/uk"
+            android:text="@string/info_switzerland" />
+
+        <TextView
+            android:id="@+id/germany"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/switzerland"
+            android:text="@string/info_germany" />
+
+        <TextView
+            android:id="@+id/italy"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/germany"
+            android:text="@string/info_italy" />
+
+        <TextView
+            android:id="@+id/france"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/italy"
+            android:text="@string/info_france" />
+
+        <TextView
+            android:id="@+id/turkey"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/france"
+            android:text="@string/info_turkey" />
+
+        <TextView
+            android:id="@+id/egypt"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/turkey"
+            android:text="@string/info_egypt" />
+
+        <TextView
+            android:id="@+id/china"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/egypt"
+            android:text="@string/info_china" />
+
+        <TextView
+            android:id="@+id/japan"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/china"
+            android:text="@string/info_japan" />
+
+        <TextView
+            android:id="@+id/south_korea"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/japan"
+            android:text="@string/info_south_korea" />
+
+        <TextView
+            android:id="@+id/india"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/south_korea"
+            android:text="@string/info_india" />
+
+        <TextView
+            android:id="@+id/autralia"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/india"
+            android:text="@string/info_australia" />
+
+        <TextView
+            android:id="@+id/brazil"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/autralia"
+            android:text="@string/info_brazil" />
+
+        <TextView
+            android:id="@+id/argentina"
+            style="@style/tip_info_txt_style"
+            android:layout_below="@+id/brazil"
+            android:text="@string/info_argentina" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/argentina"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text="@string/info_warning"
+            android:textColor="@color/Black" />
+    </RelativeLayout>
+
+</ScrollView>

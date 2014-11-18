@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:id="@+id/widget100"
+    style="@style/screen_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_id" />
+
+    <RelativeLayout
+        android:id="@+id/top_line"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/adView"
+        android:background="@color/DarkCyan" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tip_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/top_line"
+        android:paddingLeft="@dimen/padding"
+        android:text="@string/tip_person"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tip_person"
+        android:background="@color/DarkCyan" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/total_person"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tip_person"
+        android:paddingLeft="@dimen/padding"
+        android:text="@string/total_person"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/total_person"
+        android:background="@color/DarkCyan" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tip_person"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/padding"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/edit_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/total_person"
+        android:layout_alignBottom="@+id/total_person"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/padding"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/bill_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/total_person"
+        android:paddingLeft="@dimen/padding"
+        android:text="@string/bill_total"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/bill_total"
+        android:background="@color/DarkCyan" >
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/edit_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/bill_total"
+        android:layout_alignBottom="@+id/bill_total"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/padding"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/DarkOrange"
+        android:textStyle="bold" />
+
+    <TableLayout
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bill_total" >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tip_percent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/padding"
+                android:text="@string/tip_percent"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/num_of_people"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/padding"
+                android:layout_weight="1"
+                android:paddingRight="@dimen/padding"
+                android:text="@string/num_of_people"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/edit_text4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:nextFocusDown="@+id/edit_text5"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_text5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:maxLength="4"
+                android:nextFocusDown="@+id/edit_text6"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/the_bill"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/padding"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <EditText
+                android:id="@+id/edit_text6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:hint="0"
+                android:inputType="numberDecimal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" >
+
+                <requestFocus />
+            </EditText>
+
+            <Spinner
+                android:id="@+id/tax_selector"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:spinnerMode="dropdown" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/round_upwards"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="@string/round_upward"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_tax_rate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="@string/tax_rate"
+                android:inputType="numberDecimal"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/DarkOrange"
+                android:textStyle="bold" >
+            </EditText>
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/keyboard_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/table_layout" >
+
+        <TableRow
+            android:id="@+id/pad1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/button1"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonOne"
+                android:text="1" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonTwo"
+                android:text="2" />
+
+            <Button
+                android:id="@+id/Button3"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonThree"
+                android:text="3" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/DarkCyan" >
+        </RelativeLayout>
+
+        <TableRow
+            android:id="@+id/pad2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button4"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonFour"
+                android:text="4" />
+
+            <Button
+                android:id="@+id/Button5"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonFive"
+                android:text="5" />
+
+            <Button
+                android:id="@+id/Button6"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonSix"
+                android:text="6" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/DarkCyan" >
+        </RelativeLayout>
+
+        <TableRow
+            android:id="@+id/pad3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button7"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonSeven"
+                android:text="7" />
+
+            <Button
+                android:id="@+id/Button8"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonEight"
+                android:text="8" />
+
+            <Button
+                android:id="@+id/Button9"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonNine"
+                android:text="9" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/DarkCyan" >
+        </RelativeLayout>
+
+        <TableRow
+            android:id="@+id/pad4"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Button0"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonZero"
+                android:text="0" />
+
+            <Button
+                android:id="@+id/ButtonDot"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonDot"
+                android:text="." />
+
+            <Button
+                android:id="@+id/buttonDel"
+                style="@style/btn_digit_cell_style"
+                android:onClick="clickButtonDel"
+                android:text="Del"
+                android:textColor="@color/ExtraDarkCyan1" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="@color/DarkCyan" >
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/btn_digit"
+            android:text="@string/reset"
+            android:textColor="@color/ExtraDarkCyan1"
+            android:textStyle="bold" />
+    </TableLayout>
+
+</RelativeLayout>
