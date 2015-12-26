@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/build/intermediates/res/merged/debug/xml/global_gatracker.xml",
+        "source": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/src/main/res/xml/global_gatracker.xml"
+    },
+    {
+        "merged": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/build/intermediates/res/merged/debug/xml/app_gatracker.xml",
+        "source": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/src/main/res/xml/app_gatracker.xml"
+    },
+    {
+        "merged": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/build/intermediates/res/merged/debug/xml/user_settings.xml",
+        "source": "/Users/jianhuang/Dropbox/Workspace/GraphingQuadratic/app/src/main/res/xml/user_settings.xml"
+    }
+]

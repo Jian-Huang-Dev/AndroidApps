@@ -1,0 +1,13 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- *tip calculator -->
+    <dimen name="logo_text_size">80sp</dimen>
+    <dimen name="logo_width">220dp</dimen>
+    <dimen name="logo_height">220dp</dimen>
+    <dimen name="about_text_size">26sp</dimen>
+    <!-- Drawer -->
+    <dimen name="drawer_text_size">23sp</dimen>
+    <dimen name="drawer_title_size">26sp</dimen>
+    <dimen name="drawer_padding">5dp</dimen>
+    <dimen name="drawer_width">320dp</dimen>
+
+</resources>
